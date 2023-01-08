@@ -4,7 +4,8 @@
     <div id="questions">
       <form>
         <section v-for="(options, index) in store.randomizedOptionBank[store.count]" :key="index + generateKey()">
-          <input type="radio" :id="'radio' + index" :name="'quiz_question' + store.count" :value="options.correct">
+          <input type="radio" :id="'radio' + index" :name="'quiz_question' + store.count" :value="options.correct"
+            ref="checked">
           <label>{{ options.text }}</label>
         </section>
       </form>
@@ -28,10 +29,10 @@ export default {
       return (new Date().getTime() + Math.floor(Math.random() * 1000).toString());
     },
     collectUserAnswer() {
-      const choice = document.getElementsByName('quiz_question' + store.count);
-      for (let i = 0; i < choice.length; i++) {
-        if (choice[i].checked) {
-          store.userAnswers[store.count] = choice[i].value;
+      const userChoice = this.$refs.checked;
+      for (let i = 0; i < userChoice.length; i++) {
+        if (userChoice[i].checked) {
+          store.userAnswers[store.count] = userChoice[i].value;
         }
       }
       if (store.userAnswers[store.count] == null) {

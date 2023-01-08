@@ -1,25 +1,25 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <template>
-  <section v-if="store.questionAmount === 0">
+  <section v-if="!isQuestionAmountSelected">
     <div class="wrapper">
       <StartingScreen />
     </div>
   </section>
 
-  <section v-if="!quizFinished && store.questionAmount > 0">
+  <section v-if="!quizFinished && isQuestionAmountSelected">
     <h3 id="counter">Question {{ store.count + 1 }} / {{ store.questionAmount }}</h3>
     <div class="wrapper">
-      <TraversalButtons :style="{ visibility: buttonVisible ? 'visible' : 'hidden' }" :buttonNameDynamic="buttonName"
+      <TraversalButtons :style="{ visibility: buttonVisible ? 'visible' : 'hidden' }" :buttonName="buttonNameOptions"
         buttonSymbol="&lt" @click="toggleQuestionCount('prev')"></TraversalButtons>
       <QuestionManager ref="userData" />
-      <TraversalButtons :buttonNameDynamic="buttonName" buttonSymbol="&gt" @click="toggleQuestionCount('next')">
+      <TraversalButtons :buttonName="buttonNameOptions" buttonSymbol="&gt" @click="toggleQuestionCount('next')">
       </TraversalButtons>
     </div>
   </section>
 
   <section>
     <div id='questions' :style="{ visibility: quizFinished ? 'visible' : 'hidden' }">
-      <RestartScreen :quizFinished="true" :buttonNameDynamic="buttonSymbol" />
+      <EndingScreen :quizFinished="true" :buttonName="buttonNameOptions" />
     </div>
   </section>
 </template>
@@ -28,14 +28,14 @@
 import { store } from './store/store.js';
 import QuestionManager from './components/QuestionManager.vue';
 import TraversalButtons from './components/TraversalButtons.vue';
-import RestartScreen from './components/EndingScreen.vue';
+import EndingScreen from './components/EndingScreen.vue';
 import StartingScreen from './components/StartingScreen.vue';
 
 
 export default {
   data() {
     return {
-      buttonName: {
+      buttonNameOptions: {
         prev: 'Previous',
         next: 'Next',
         submit: 'Submit'
@@ -93,10 +93,18 @@ export default {
   beforeMount() {
     this.toggleButtons();
   },
+  computed: {
+    isQuestionAmountSelected() {
+      if (store.questionAmount === 0) {
+        return false;
+      }
+      return true;
+    }
+  },
   components: {
     QuestionManager,
     TraversalButtons,
-    RestartScreen,
+    EndingScreen,
     StartingScreen
   }
 }

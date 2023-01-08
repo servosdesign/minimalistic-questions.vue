@@ -2,7 +2,7 @@
   <div class="content">
     <h3>Welcome to the quiz!</h3>
     <p>Choose your total amount of questions below</p>
-    <select v-model="selected" @change="setTotalQuestionAmount()">
+    <select v-model="userSelection" @change="setTotalQuestionAmount()">
       <option disabled value="null">Please select one</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -24,12 +24,12 @@ import { store } from '../store/store.js';
 export default {
   data() {
     return {
-      selected: null
+      userSelection: null
     }
   },
   methods: {
     setTotalQuestionAmount() {
-      store.questionAmount = this.selected;
+      store.questionAmount = this.userSelection;
     }
   }
 }

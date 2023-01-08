@@ -2,10 +2,10 @@
 <template>
   <ul>
     <li class="icon button">
-      <span class="tooltip" v-if="previousButton">{{ buttonNameDynamic.prev }}</span>
-      <span class="tooltip" v-if="submitionButton">{{ buttonNameDynamic.submit }}</span>
-      <span class="tooltip" v-if="nextButton">{{ buttonNameDynamic.next }}</span>
-      <span class="tooltip" v-if="restartButton">{{ buttonSymbol }}</span>
+      <span class="tooltip" v-if="isPreviousButton">{{ buttonName.prev }}</span>
+      <span class="tooltip" v-if="isSubmitionButton">{{ buttonName.submit }}</span>
+      <span class="tooltip" v-if="isNextButton">{{ buttonName.next }}</span>
+      <span class="tooltip" v-if="isRestartButton">{{ buttonSymbol }}</span>
       <span><i>{{ buttonSymbol }}</i></span>
     </li>
   </ul>
@@ -15,35 +15,33 @@
 import { store } from '../store/store';
 
 export default {
-  props: ['buttonNameDynamic', 'buttonSymbol'],
+  props: ['buttonName', 'buttonSymbol'],
   data() {
     return {
       store
     }
   },
-  methods: {
-  },
   computed: {
-    previousButton() {
+    isPreviousButton() {
       if (this.buttonSymbol === '<') {
         return true;
       }
       return false;
     },
-    nextButton() {
+    isNextButton() {
       if (this.buttonSymbol === '>' && store.count != store.questionAmount - 1) {
         return true;
       }
       return false;
     },
-    submitionButton() {
+    isSubmitionButton() {
       if (this.buttonSymbol === '>' && store.count === store.questionAmount - 1) {
         return true;
       }
       return false;
     },
-    restartButton() {
-      if (!this.previousButton && !this.nextButton && !this.submitionButton) {
+    isRestartButton() {
+      if (!this.isPreviousButton && !this.isNextButton && !this.isSubmitionButton) {
         return true;
       }
       return false;
