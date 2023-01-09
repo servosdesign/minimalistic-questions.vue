@@ -23,28 +23,16 @@ export default {
   },
   computed: {
     isPreviousButton() {
-      if (this.buttonSymbol === '<') {
-        return true;
-      }
-      return false;
+      return this.buttonSymbol === '<';
     },
     isNextButton() {
-      if (this.buttonSymbol === '>' && store.count != store.questionAmount - 1) {
-        return true;
-      }
-      return false;
+      return this.buttonSymbol === '>' && store.count != store.questionAmount - 1;
     },
     isSubmitionButton() {
-      if (this.buttonSymbol === '>' && store.count === store.questionAmount - 1) {
-        return true;
-      }
-      return false;
+      return this.buttonSymbol === '>' && store.count === store.questionAmount - 1;
     },
     isRestartButton() {
-      if (!this.isPreviousButton && !this.isNextButton && !this.isSubmitionButton) {
-        return true;
-      }
-      return false;
+      return !this.isPreviousButton && !this.isNextButton && !this.isSubmitionButton;
     }
   }
 }
