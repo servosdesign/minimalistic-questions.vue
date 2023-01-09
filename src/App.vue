@@ -17,7 +17,7 @@
     </div>
   </section>
 
-  <section>
+  <section v-if="quizFinished">
     <div id='questions' :style="{ visibility: quizFinished ? 'visible' : 'hidden' }">
       <EndingScreen :quizFinished="true" :buttonName="buttonNameOptions" />
     </div>
@@ -60,9 +60,9 @@ export default {
           store.count--;
         }
       }
-      this.toggleButtons();
+      this.toggleButtonsShown();
     },
-    toggleButtons() {
+    toggleButtonsShown() {
       if (store.count > 0) {
         this.enableButtons();
       }
@@ -74,24 +74,26 @@ export default {
       this.calculateTotalScore();
       this.quizFinished = true;
     },
-    enableButtons() {
-      this.buttonVisible = true;
-    },
-    disableButtons() {
-      this.buttonVisible = false;
-    },
     restartQuiz() {
-      window.location.reload();
+      store.resetAllData();
+      this.toggleButtonsShown();
+      this.quizFinished = false;
     },
     calculateTotalScore() {
       store.totalScore = store.userAnswers.filter(value => value === 'true').length;
     },
     collectUserAnswer() {
       this.$refs.userData.collectUserAnswer()
+    },
+    enableButtons() {
+      this.buttonVisible = true;
+    },
+    disableButtons() {
+      this.buttonVisible = false;
     }
   },
   beforeMount() {
-    this.toggleButtons();
+    this.toggleButtonsShown();
   },
   computed: {
     isQuestionAmountSelected() {
