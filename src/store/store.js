@@ -7,6 +7,7 @@ export const store = reactive({
   userAnswers: [],
   randomizedOptionBank: [],
   randomizedQuestionBank: [],
+
   resetAllData() {
     this.count = 0;
     this.questionAmount = 0;
