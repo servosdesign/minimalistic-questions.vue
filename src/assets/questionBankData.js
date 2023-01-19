@@ -1,28 +1,28 @@
-let questionBank = [
+const questionBank = [
   {
     question: '1 + 1 = ?',
     options: [
       {
         text: '1',
         correct: false,
-        feedback: '1 is wrong',
+        feedback: '1 is wrong'
       },
       {
         text: '2',
         correct: true,
-        feedback: '2 is correct',
+        feedback: '2 is correct'
       },
       {
         text: '3',
         correct: false,
-        feedback: '3 is wrong',
+        feedback: '3 is wrong'
       },
       {
         text: '4',
         correct: false,
-        feedback: '4 is wrong',
-      },
-    ],
+        feedback: '4 is wrong'
+      }
+    ]
   },
   {
     question: '1 + 2 = ?',
@@ -30,24 +30,24 @@ let questionBank = [
       {
         text: '1',
         correct: false,
-        feedback: '1 is wrong',
+        feedback: '1 is wrong'
       },
       {
         text: '2',
         correct: false,
-        feedback: '2 is wrong',
+        feedback: '2 is wrong'
       },
       {
         text: '3',
         correct: true,
-        feedback: '3 is correct',
+        feedback: '3 is correct'
       },
       {
         text: '4',
         correct: false,
-        feedback: '4 is wrong',
-      },
-    ],
+        feedback: '4 is wrong'
+      }
+    ]
   },
   {
     question: '1 + 3 = ?',
@@ -55,24 +55,24 @@ let questionBank = [
       {
         text: '1',
         correct: false,
-        feedback: '1 is wrong',
+        feedback: '1 is wrong'
       },
       {
         text: '2',
         correct: false,
-        feedback: '2 is wrong',
+        feedback: '2 is wrong'
       },
       {
         text: '3',
         correct: false,
-        feedback: '3 is wrong',
+        feedback: '3 is wrong'
       },
       {
         text: '4',
         correct: true,
-        feedback: '4 is correct',
-      },
-    ],
+        feedback: '4 is correct'
+      }
+    ]
   },
   {
     question: '5 - 1 = ?',
@@ -80,24 +80,24 @@ let questionBank = [
       {
         text: '1',
         correct: false,
-        feedback: '1 is wrong',
+        feedback: '1 is wrong'
       },
       {
         text: '2',
         correct: false,
-        feedback: '2 is wrong',
+        feedback: '2 is wrong'
       },
       {
         text: '3',
         correct: false,
-        feedback: '3 is wrong',
+        feedback: '3 is wrong'
       },
       {
         text: '4',
         correct: true,
-        feedback: '4 is correct',
-      },
-    ],
+        feedback: '4 is correct'
+      }
+    ]
   },
   {
     question: '5 - 2 = ?',
@@ -105,24 +105,24 @@ let questionBank = [
       {
         text: '1',
         correct: false,
-        feedback: '1 is wrong',
+        feedback: '1 is wrong'
       },
       {
         text: '2',
         correct: false,
-        feedback: '2 is wrong',
+        feedback: '2 is wrong'
       },
       {
         text: '3',
         correct: true,
-        feedback: '3 is correct',
+        feedback: '3 is correct'
       },
       {
         text: '4',
         correct: false,
-        feedback: '4 is wrong',
-      },
-    ],
+        feedback: '4 is wrong'
+      }
+    ]
   },
   {
     question: '5 - 3 = ?',
@@ -130,24 +130,24 @@ let questionBank = [
       {
         text: '1',
         correct: false,
-        feedback: '1 is wrong',
+        feedback: '1 is wrong'
       },
       {
         text: '2',
         correct: true,
-        feedback: '2 is correct',
+        feedback: '2 is correct'
       },
       {
         text: '3',
         correct: false,
-        feedback: '3 is wrong',
+        feedback: '3 is wrong'
       },
       {
         text: '4',
         correct: false,
-        feedback: '4 is wrong',
-      },
-    ],
+        feedback: '4 is wrong'
+      }
+    ]
   },
   {
     question: '5 - 4 = ?',
@@ -155,24 +155,24 @@ let questionBank = [
       {
         text: '1',
         correct: true,
-        feedback: '1 is correct',
+        feedback: '1 is correct'
       },
       {
         text: '2',
         correct: false,
-        feedback: '2 is wrong',
+        feedback: '2 is wrong'
       },
       {
         text: '3',
         correct: false,
-        feedback: '3 is wrong',
+        feedback: '3 is wrong'
       },
       {
         text: '4',
         correct: false,
-        feedback: '4 is wrong',
-      },
-    ],
+        feedback: '4 is wrong'
+      }
+    ]
   },
   {
     question: '1 x 1 = ?',
@@ -180,24 +180,24 @@ let questionBank = [
       {
         text: '1',
         correct: true,
-        feedback: '1 is correct',
+        feedback: '1 is correct'
       },
       {
         text: '2',
         correct: false,
-        feedback: '2 is wrong',
+        feedback: '2 is wrong'
       },
       {
         text: '3',
         correct: false,
-        feedback: '3 is wrong',
+        feedback: '3 is wrong'
       },
       {
         text: '4',
         correct: false,
-        feedback: '4 is wrong',
-      },
-    ],
+        feedback: '4 is wrong'
+      }
+    ]
   },
   {
     question: '1 x 2 = ?',
@@ -205,24 +205,24 @@ let questionBank = [
       {
         text: '1',
         correct: false,
-        feedback: '1 is wrong',
+        feedback: '1 is wrong'
       },
       {
         text: '2',
         correct: true,
-        feedback: '2 is correct',
+        feedback: '2 is correct'
       },
       {
         text: '3',
         correct: false,
-        feedback: '3 is wrong',
+        feedback: '3 is wrong'
       },
       {
         text: '4',
         correct: false,
-        feedback: '4 is wrong',
-      },
-    ],
+        feedback: '4 is wrong'
+      }
+    ]
   },
   {
     question: '1 x 3 = ?',
@@ -230,25 +230,25 @@ let questionBank = [
       {
         text: '1',
         correct: false,
-        feedback: '1 is wrong',
+        feedback: '1 is wrong'
       },
       {
         text: '2',
         correct: false,
-        feedback: '2 is wrong',
+        feedback: '2 is wrong'
       },
       {
         text: '3',
         correct: true,
-        feedback: '3 is correct',
+        feedback: '3 is correct'
       },
       {
         text: '4',
         correct: false,
-        feedback: '4 is wrong',
-      },
-    ],
-  },
-];
+        feedback: '4 is wrong'
+      }
+    ]
+  }
+]
 
-export default questionBank;
+export default questionBank

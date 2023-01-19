@@ -1,4 +1,4 @@
-import { reactive } from 'vue';
+import { reactive } from 'vue'
 
 export const store = reactive({
   count: 0,
@@ -8,12 +8,12 @@ export const store = reactive({
   randomizedOptionBank: [],
   randomizedQuestionBank: [],
 
-  resetAllData() {
-    this.count = 0;
-    this.questionAmount = 0;
-    this.totalScore = [];
-    this.userAnswers = [];
-    this.randomizedOptionBank = [];
-    this.randomizedQuestionBank = [];
-  },
-});
+  resetAllData () {
+    this.count = 0
+    this.questionAmount = 0
+    this.totalScore = []
+    this.userAnswers = []
+    this.randomizedOptionBank = []
+    this.randomizedQuestionBank = []
+  }
+})

@@ -1,32 +1,29 @@
-let questionManagementMethods = {
+const questionManagementMethods = {
   /* Fisher–Yates shuffle */
-  shuffle(array) {
+  shuffle (array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      [array[i], array[j]] = [array[j], array[i]]
     }
-    return array;
+    return array
   },
 
-  randomizeData(
+  randomizeData (
     questionBank,
     randomizedQuestionBank,
-    randomizedOptionBank,
-    questionAmount
+    randomizedOptionBank
   ) {
     /* Questions */
     for (let i = 0; i < questionBank.length; i++) {
-      randomizedQuestionBank.push(questionBank[i]);
-      this.shuffle(randomizedQuestionBank);
+      randomizedQuestionBank.push(questionBank[i])
+      this.shuffle(randomizedQuestionBank)
     }
-    randomizedQuestionBank = randomizedQuestionBank.slice(0, questionAmount);
-
     /* Options */
     for (let i = 0; i < randomizedQuestionBank.length; i++) {
-      randomizedOptionBank.push(randomizedQuestionBank[i].options);
-      this.shuffle(randomizedOptionBank[i]);
+      randomizedOptionBank.push(randomizedQuestionBank[i].options)
+      this.shuffle(randomizedOptionBank[i])
     }
-  },
-};
+  }
+}
 
-export default questionManagementMethods;
+export default questionManagementMethods

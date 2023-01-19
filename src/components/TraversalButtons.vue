@@ -2,37 +2,49 @@
 <template>
   <ul>
     <li class="icon button">
-      <span class="tooltip" v-if="isPreviousButton">{{ buttonName.prev }}</span>
-      <span class="tooltip" v-if="isSubmitionButton">{{ buttonName.submit }}</span>
-      <span class="tooltip" v-if="isNextButton">{{ buttonName.next }}</span>
-      <span class="tooltip" v-if="isRestartButton">{{ buttonSymbol }}</span>
+      <span
+        v-if="isPreviousButton"
+        class="tooltip"
+      >{{ buttonName.prev }}</span>
+      <span
+        v-if="isSubmitionButton"
+        class="tooltip"
+      >{{ buttonName.submit }}</span>
+      <span
+        v-if="isNextButton"
+        class="tooltip"
+      >{{ buttonName.next }}</span>
+      <span
+        v-if="isRestartButton"
+        class="tooltip"
+      >{{ buttonSymbol }}</span>
       <span><i>{{ buttonSymbol }}</i></span>
     </li>
   </ul>
 </template>
 
 <script>
-import { store } from '../store/store';
+import { store } from '../store/store'
 
 export default {
   props: ['buttonName', 'buttonSymbol'],
-  data() {
+  data () {
     return {
       store
     }
   },
   computed: {
-    isPreviousButton() {
-      return this.buttonSymbol === '<';
+    isPreviousButton () {
+      return this.buttonSymbol === '<'
     },
-    isNextButton() {
-      return this.buttonSymbol === '>' && store.count != store.questionAmount - 1;
+    isNextButton () {
+      return this.buttonSymbol === '>' && store.count !== store.questionAmount - 1
     },
-    isSubmitionButton() {
-      return this.buttonSymbol === '>' && store.count === store.questionAmount - 1;
+    isSubmitionButton () {
+      return this.buttonSymbol === '>' && store.count === store.questionAmount - 1
     },
-    isRestartButton() {
-      return !this.isPreviousButton && !this.isNextButton && !this.isSubmitionButton;
+    isRestartButton () {
+      return !this.isPreviousButton && !this.isNextButton && !this.isSubmitionButton
     }
   }
 }

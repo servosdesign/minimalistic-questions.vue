@@ -1,5 +1,5 @@
 {
-  "name": "minimilistic-quiz",
+  "name": "minimalistic-quiz",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "eslint-config-standard": "^17.0.0",
+    "vue": "^3.2.45",
+    "standard": "*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
