@@ -23,32 +23,7 @@
   </ul>
 </template>
 
-<script>
-import { store } from '../store/store'
-
-export default {
-  props: ['buttonName', 'buttonSymbol'],
-  data () {
-    return {
-      store
-    }
-  },
-  computed: {
-    isPreviousButton () {
-      return this.buttonSymbol === '<'
-    },
-    isNextButton () {
-      return this.buttonSymbol === '>' && store.count !== store.questionAmount - 1
-    },
-    isSubmitionButton () {
-      return this.buttonSymbol === '>' && store.count === store.questionAmount - 1
-    },
-    isRestartButton () {
-      return !this.isPreviousButton && !this.isNextButton && !this.isSubmitionButton
-    }
-  }
-}
-</script>
+<script lang="ts" src="./TraversalButtons.ts" />
 
 <style scoped>
 .icon {
