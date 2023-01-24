@@ -10,9 +10,8 @@
   },
   "dependencies": {
     "eslint-config-standard": "^17.0.0",
-    "standard": "*",
-    "typescript": "^4.9.4",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "standard": "*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

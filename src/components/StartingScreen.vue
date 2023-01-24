@@ -46,7 +46,22 @@
   </div>
 </template>
 
-<script lang="ts" src="./StartingScreen.ts" />
+<script>
+import { store } from '../store/store.js'
+
+export default {
+  data () {
+    return {
+      userSelection: null
+    }
+  },
+  methods: {
+    setTotalQuestionAmount () {
+      store.questionAmount = this.userSelection
+    }
+  }
+}
+</script>
 
 <style scoped>
 .content {

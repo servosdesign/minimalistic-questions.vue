@@ -14,4 +14,24 @@
   </div>
 </template>
 
-<script lang="ts" src="./EndingScreen.ts" />
+<script>
+import { store } from '../store/store.js'
+import TraversalButtons from './TraversalButtons.vue'
+
+export default {
+  components: {
+    TraversalButtons
+  },
+  props: ['quizFinished', 'buttonName', 'buttonSymbol'],
+  data () {
+    return {
+      store
+    }
+  },
+  methods: {
+    restartQuiz () {
+      this.$parent.restartQuiz()
+    }
+  }
+}
+</script>

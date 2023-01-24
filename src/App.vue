@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { store } from './store/store'
+import { store } from './store/store.js'
 import QuestionManager from './components/QuestionManager.vue'
 import TraversalButtons from './components/TraversalButtons.vue'
 import EndingScreen from './components/EndingScreen.vue'
