@@ -27,7 +27,16 @@
 import { store } from '../store/store'
 
 export default {
-  props: ['buttonName', 'buttonSymbol'],
+  props: {
+    buttonName: {
+      type: [Object, String],
+      default: () => {}
+    },
+    buttonSymbol: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       store

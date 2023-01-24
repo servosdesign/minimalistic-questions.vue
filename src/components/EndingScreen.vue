@@ -22,7 +22,20 @@ export default {
   components: {
     TraversalButtons
   },
-  props: ['quizFinished', 'buttonName', 'buttonSymbol'],
+  props: {
+    quizFinished: {
+      type: Boolean,
+      default: false
+    },
+    buttonName: {
+      type: [Object, String],
+      default: () => {}
+    },
+    buttonSymbol: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       store
